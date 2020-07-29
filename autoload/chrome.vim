@@ -25,7 +25,7 @@ function! chrome#close() abort
 endfunction
 
 function! chrome#down() abort
-  let cmd = 'osascript '. s:scriptdir . "/scroll.scpt down " . g:chromevim#scroll
+  let cmd = 'osascript '. s:scriptdir . "/scroll.scpt down " . get(g:, 'chromevim#scroll', 100)
   let s:result = []
   call job_start(cmd, {
         \ "out_cb": function("s:cmd_out"),
@@ -36,7 +36,7 @@ function! chrome#down() abort
 endfunction
 
 function! chrome#up() abort
-  let cmd = 'osascript '. s:scriptdir . "/scroll.scpt up " . g:chromevim#scroll
+  let cmd = 'osascript '. s:scriptdir . "/scroll.scpt up " . get(g:, 'chromevim#scroll', 100)
   let s:result = []
   call job_start(cmd, {
         \ "out_cb": function("s:cmd_out"),
