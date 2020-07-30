@@ -7,6 +7,18 @@ function! chrome#search(word) abort
   let cmd = 'bash '. s:scriptdir . "/open.sh " . a:word
   let s:result = []
   call job_start(cmd, {
+        \ "out_cb": function("s:cmd_out"),
+        \ "err_cb": function("s:cmd_out"),
+        \ "exit_cb":function("s:cmd_exit"),
+        \})
+  return
+endfunction
+
+function! chrome#stroke(word) abort
+  let cmd = 'osascript '. s:scriptdir . "/stroke.scpt " . a:word
+  let s:result = []
+  call job_start(cmd, {
+        \ "out_cb": function("s:cmd_out"),
         \ "err_cb": function("s:cmd_out"),
         \ "exit_cb":function("s:cmd_exit"),
         \})
