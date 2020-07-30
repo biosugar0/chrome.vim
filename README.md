@@ -25,10 +25,10 @@ let g:chromevim#scroll=200
 
 ## Usage
 
-`:Chrome query`           : search 'query' by Google Chrome
-`:ChromeStroke <key>`     : send key string to Google Chrome.
-`:ChromeStrokeCode <code>`: send key code to Google Chrome.
-`:ChromeDown`             : scroll down
-`:ChromeUp`               : scroll up
-`:ChromeTabClose`         : close active tab
+* `:Chrome query`           : search 'query' by Google Chrome
+* `:ChromeStroke <key>`     : send key string to Google Chrome.
+* `:ChromeStrokeCode <code>`: send key code to Google Chrome.
+* `:ChromeDown`             : scroll down
+* `:ChromeUp`               : scroll up
+* `:ChromeTabClose`         : close active tab
 
