@@ -4,7 +4,7 @@ let s:result = []
 
 function! chrome#search(word) abort
   echo "run google search..."
-  let cmd = 'bash '. s:scriptdir . "/open.sh " . a:word
+  let cmd = 'bash '. s:scriptdir . "/scripts/open.sh " . a:word
   let s:result = []
   call job_start(cmd, {
         \ "out_cb": function("s:cmd_out"),
@@ -15,7 +15,7 @@ function! chrome#search(word) abort
 endfunction
 
 function! chrome#stroke(category,word) abort
-    let cmd = 'osascript '. s:scriptdir . "/stroke.scpt " . a:category . " ". a:word
+    let cmd = 'osascript '. s:scriptdir . "/scripts/stroke.scpt " . a:category . " ". a:word
   let s:result = []
   call job_start(cmd, {
         \ "out_cb": function("s:cmd_out"),
@@ -26,7 +26,7 @@ function! chrome#stroke(category,word) abort
 endfunction
 
 function! chrome#close() abort
-  let cmd = 'osascript '. s:scriptdir . "/close.scpt"
+  let cmd = 'osascript '. s:scriptdir . "/scripts/close.scpt"
   let s:result = []
   call job_start(cmd, {
         \ "out_cb": function("s:cmd_out"),
@@ -37,7 +37,7 @@ function! chrome#close() abort
 endfunction
 
 function! chrome#down() abort
-  let cmd = 'osascript '. s:scriptdir . "/scroll.scpt down " . get(g:, 'chromevim#scroll', 100)
+  let cmd = 'osascript '. s:scriptdir . "/scripts/scroll.scpt down " . get(g:, 'chromevim#scroll', 100)
   let s:result = []
   call job_start(cmd, {
         \ "out_cb": function("s:cmd_out"),
@@ -48,7 +48,7 @@ function! chrome#down() abort
 endfunction
 
 function! chrome#up() abort
-  let cmd = 'osascript '. s:scriptdir . "/scroll.scpt up " . get(g:, 'chromevim#scroll', 100)
+  let cmd = 'osascript '. s:scriptdir . "/scripts/scroll.scpt up " . get(g:, 'chromevim#scroll', 100)
   let s:result = []
   call job_start(cmd, {
         \ "out_cb": function("s:cmd_out"),
