@@ -14,8 +14,8 @@ function! chrome#search(word) abort
   return
 endfunction
 
-function! chrome#stroke(word) abort
-  let cmd = 'osascript '. s:scriptdir . "/stroke.scpt " . a:word
+function! chrome#stroke(category,word) abort
+    let cmd = 'osascript '. s:scriptdir . "/stroke.scpt " . a:category . " ". a:word
   let s:result = []
   call job_start(cmd, {
         \ "out_cb": function("s:cmd_out"),
