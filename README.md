@@ -1,13 +1,14 @@
 # chrome.vim
-chrome controller for vim
+a plugin for Chrome controll
 
 ## require
 
+* MacOS
 * Vimium
 * AppleScript
 * bash
 
-# example config
+## example config
 
 ```
 nmap ml :<C-u>ChromeStroke "L"<CR>
@@ -21,3 +22,13 @@ nmap mx :<C-u>ChromeTabClose<CR>
 nmap me :<C-u>ChromeStrokeCode 53<CR>
 let g:chromevim#scroll=200
 ```
+
+## Usage
+
+`:Chrome query`           : search 'query' by Google Chrome
+`:ChromeStroke <key>`     : send key string to Google Chrome.
+`:ChromeStrokeCode <code>`: send key code to Google Chrome.
+`:ChromeDown`             : scroll down
+`:ChromeUp`               : scroll up
+`:ChromeTabClose`         : close active tab
+
