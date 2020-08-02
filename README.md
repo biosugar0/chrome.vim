@@ -8,6 +8,11 @@ a plugin for Chrome controll
 * AppleScript
 * bash
 
+This plugin use Apple script to send key to chrome.
+So the following settings are required.
+
+System Preferences, click Privacy, click Accessibility, then select the app’s tick box.
+
 ## example config
 
 [vim-submode](https://github.com/kana/vim-submode)
